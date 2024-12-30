@@ -43,4 +43,7 @@ fclean: clean
 
 re: fclean all
 
+test: all
+	$(CC) $(FLAGS) -o test test.c $(NAME)
+
 .PHONY: all clean fclean re bonus

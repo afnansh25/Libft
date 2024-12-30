@@ -21,12 +21,10 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
     i = 0;
     st1 = (unsigned const char *)s1;
     st2 = (unsigned const char *)s2;
-    while (i < n)
+    while (i < n && st1[i] && st2[i])
     {
         if (st1[i] != st2[i])
             return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-        if (st1[i] == '\0' || st2[i] == '\0')
-        break;
         i++;
     } 
     return (0);
