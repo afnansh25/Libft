@@ -2,17 +2,23 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int main(void)
 {
-    char    src[20] = "Afnan";
-    char    dest[20] = "Farid";
-    size_t  len;
+    const char    *str = "Afnan Farid Shaheen";
+    char    **result;
+    size_t  i;
 
-    len = ft_strlcat(dest, src, 6);
-    printf("My function ft_strlcpy:%ld\n", len);
-
-    // strlcpy(dest, src, 5);
-    // printf("the orignial function strlcpy:%s\n", dest);
-
+    result = ft_split(str, ' ');
+    if(!result)
+        return(0);
+    i = 0;
+    while (result[i] != NULL)
+    {
+        printf("The result of ft_split: %s\n", result[i]);
+        free (result[i]);
+        i++;
+    }
+    free(result);
     return (0);
 }

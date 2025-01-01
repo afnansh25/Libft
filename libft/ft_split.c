@@ -56,42 +56,43 @@ size_t word_start(char const *s, char c, size_t i)
     return (i);
 }
 
-size_t word_end(char const *s, char c, size_t i)
-{
-    while (s[i] != c && s[i])
-        i++;
-    return (i);
-}
-
-char    **ft_split(char const *s, char c)
+char    **strsplit(char **split, char *s, char c)
 {
     size_t  i;
     size_t  k;
     size_t  start;
-    char    **split;
 
-    split = malloc(sizeof(char *) * (count_words(s, c) + 1));
-    if (!s || !split)
-        return (NULL);
-    // if (s == NULL)
-    //     return (NULL);
-    // split = (char **)malloc(sizeof (char *) * (count_words(s, c) + 1));
-    // if(!split)
-    //     return (NULL);
+    start = 0;
     i = 0;
     k = 0;
     while (s[i])
     {
         start = word_start(s, c, i);
-        i = word_end(s, c, start);
+        i = start;
+        while (s[i] != c && s[i])
+            i++;
         if (i > start)
         {
             split[k] = ft_substr(s, start, i - start);
             if(!split[k])
                 return (free_split(split, k));
             k++;
-        }   
+        }
+        start = i;
     }
     split[k] = NULL;
+    return (split);
+}
+
+char    **ft_split(char const *s, char c)
+{
+    char    **split;
+
+    if (s == NULL)
+        return (NULL);
+    split = (char **)malloc(sizeof (char *) * (count_words(s, c) + 1));
+    if(!split)
+        return (NULL);
+    strsplit(split, (char *)s, c);
     return (split);
 }
