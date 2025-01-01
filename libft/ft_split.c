@@ -49,12 +49,6 @@ void    *free_split(char **split, size_t k)
     return (NULL);
 }
 
-size_t word_start(char const *s, char c, size_t i)
-{
-    while (s[i] == c && s[i])
-        i++;
-    return (i);
-}
 
 char    **strsplit(char **split, char *s, char c)
 {
@@ -67,7 +61,8 @@ char    **strsplit(char **split, char *s, char c)
     k = 0;
     while (s[i])
     {
-        start = word_start(s, c, i);
+        while (s[start] == c && s[start])
+            start++;
         i = start;
         while (s[i] != c && s[i])
             i++;
