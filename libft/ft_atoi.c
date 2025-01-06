@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//i love reem
 int ft_atoi(const char *str)
 {
     size_t  i;
