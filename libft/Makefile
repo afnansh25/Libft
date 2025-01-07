@@ -46,4 +46,7 @@ re: fclean all
 test: all
 	$(CC) $(FLAGS) -o test test.c $(NAME)
 
+testbonus: bonus all 
+	$(CC) $(FLAGS) -o testbonus test_bonus.c $(NAME)
+
 .PHONY: all clean fclean re bonus
