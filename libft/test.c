@@ -87,42 +87,48 @@
 //     return (0);
 // }
 
-#include <fcntl.h> // For open()
-#include <unistd.h> // For close()
+// #include <fcntl.h> // For open()
+// #include <unistd.h> // For close()
 
-int main(void) {
-    // Test 1: Write to the terminal (fd = 1)
-    ft_putstr_fd("Writing to the terminal (Standard Output)\n", 1);
+// int main(void) {
+//     // Test 1: Write to the terminal (fd = 1)
+//     ft_putstr_fd("Writing to the terminal (Standard Output)\n", 1);
 
-    // Test 2: Write an error message (fd = 2)
-    ft_putstr_fd("This is an error message (Standard Error)\n", 2);
+//     // Test 2: Write an error message (fd = 2)
+//     ft_putstr_fd("This is an error message (Standard Error)\n", 2);
 
-    // Test 3: Write to a file
-    int file_fd = open("output.txt", O_WRONLY | O_CREAT| O_TRUNC, 0644);
-    if (file_fd < 0) {
-        perror("Error opening file"); // Print error if file cannot be opened
-        return (1);
-    }
-    ft_putstr_fd("Hello, file!\n", file_fd); // Write to the file
-    ft_putchar_fd('A', file_fd); // Write a single character to the file
-    close(file_fd); // Close the file descriptor
+//     // Test 3: Write to a file
+//     int file_fd = open("output.txt", O_WRONLY | O_CREAT| O_TRUNC, 0644);
+//     if (file_fd < 0) {
+//         perror("Error opening file"); // Print error if file cannot be opened
+//         return (1);
+//     }
+//     ft_putstr_fd("Hello, file!\n", file_fd); // Write to the file
+//     ft_putchar_fd('A', file_fd); // Write a single character to the file
+//     close(file_fd); // Close the file descriptor
 
-    // Test 4: Reading back the file (for demonstration)
-    file_fd = open("output.txt", O_RDONLY);
-    if (file_fd < 0) {
-        perror("Error opening file for reading");
-        return (1);
-    }
-    char buffer[100];
-    int bytes_read = read(file_fd, buffer, sizeof(buffer) - 1);
-    if (bytes_read > 0) {
-        buffer[bytes_read] = '\0'; // Null-terminate the string
-        ft_putstr_fd("Read from file:\n", 1);
-        ft_putstr_fd(buffer, 1); // Print file content to the terminal
-    } else {
-        perror("Error reading file");
-    }
-    close(file_fd); // Close the file descriptor
+//     // Test 4: Reading back the file (for demonstration)
+//     file_fd = open("output.txt", O_RDONLY);
+//     if (file_fd < 0) {
+//         perror("Error opening file for reading");
+//         return (1);
+//     }
+//     char buffer[100];
+//     int bytes_read = read(file_fd, buffer, sizeof(buffer) - 1);
+//     if (bytes_read > 0) {
+//         buffer[bytes_read] = '\0'; // Null-terminate the string
+//         ft_putstr_fd("Read from file:\n", 1);
+//         ft_putstr_fd(buffer, 1); // Print file content to the terminal
+//     } else {
+//         perror("Error reading file");
+//     }
+//     close(file_fd); // Close the file descriptor
 
-    return (0);
+//     return (0);
+// }
+
+int main(void)
+{
+    printf("The original function itoa: %s\n", itoa(223095));
+    printf("My function ft_itoa: %s\n", ft_itoa(223095));
 }
