@@ -127,8 +127,39 @@
 //     return (0);
 // }
 
+// int main(void)
+// {
+//     printf("The original function itoa: %s\n", itoa(223095));
+//     printf("My function ft_itoa: %s\n", ft_itoa(223095));
+// }
+
+// int main(void)
+// {
+//     char str[] = "bonjour";
+
+//     printf("Test 1: %s\n", ft_strrchr(str, 'o'));      // Expected: "our"
+//     printf("Test 2: %s\n", ft_strrchr(str, 's'));      // Expected: NULL
+//     printf("Test 3: %s\n", ft_strrchr(str, '\0'));     // Expected: ""
+//     printf("Test 4: %s\n", ft_strrchr(str + 2, 'b'));  // Expected: NULL
+
+//     return (0);
+// }
+
 int main(void)
 {
-    printf("The original function itoa: %s\n", itoa(223095));
-    printf("My function ft_itoa: %s\n", ft_itoa(223095));
+    printf("Test 1: %d\n", ft_strncmp("abc", "abc", 3));            // Expected: 0
+    printf("Test 2: %d\n", ft_strncmp("test", "testss", 7));        // Expected: -1
+    printf("Test 3: %d\n", ft_strncmp("testss", "test", 7));        // Expected: 1
+    printf("Test 4: %d\n", ft_strncmp("", "test", 4));              // Expected: -1
+    printf("Test 5: %d\n", ft_strncmp("test", "", 4));              // Expected: 1
+    printf("Test 6: %d\n", ft_strncmp("test\200", "test\0", 6));    // Expected: 1
+
+     printf("Test 1: %d\n", strncmp("abc", "abc", 3));            // Expected: 0
+    printf("Test 2: %d\n", strncmp("test", "testss", 7));        // Expected: -1
+    printf("Test 3: %d\n", strncmp("testss", "test", 7));        // Expected: 1
+    printf("Test 4: %d\n", strncmp("", "test", 4));              // Expected: -1
+    printf("Test 5: %d\n", strncmp("test", "", 4));              // Expected: 1
+    printf("Test 6: %d\n", strncmp("test\200", "test\0", 6)); 
+
+    return (0);
 }
