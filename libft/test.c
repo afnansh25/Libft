@@ -127,11 +127,17 @@
 //     return (0);
 // }
 
-// int main(void)
-// {
-//     printf("The original function itoa: %s\n", itoa(223095));
-//     printf("My function ft_itoa: %s\n", ft_itoa(223095));
-// }
+int main(void)
+{
+    //printf("The original function itoa: %s\n", itoa(223095));
+    //printf("My function ft_itoa: %s\n", ft_itoa(223095688098769));
+    printf("My Atoi function: %d\n", ft_atoi("9223372036854775808"));
+    printf("The original function atoi: %d\n", atoi("9223372036854775808"));
+
+    // printf("My Atoi function: %d\n", ft_atoi("----+9482710"));
+    // printf("The original function atoi: %d\n", atoi("----+9482710"));
+
+}
 
 // int main(void)
 // {
@@ -145,21 +151,40 @@
 //     return (0);
 // }
 
-int main(void)
-{
-    printf("Test 1: %d\n", ft_strncmp("abc", "abc", 3));            // Expected: 0
-    printf("Test 2: %d\n", ft_strncmp("test", "testss", 7));        // Expected: -1
-    printf("Test 3: %d\n", ft_strncmp("testss", "test", 7));        // Expected: 1
-    printf("Test 4: %d\n", ft_strncmp("", "test", 4));              // Expected: -1
-    printf("Test 5: %d\n", ft_strncmp("test", "", 4));              // Expected: 1
-    printf("Test 6: %d\n", ft_strncmp("test\200", "test\0", 6));    // Expected: 1
+// int main(void)
+// {
+//     printf("Test 1: %d\n", ft_strncmp("abc", "abc", 3));            // Expected: 0
+//     printf("Test 2: %d\n", ft_strncmp("test", "testss", 7));        // Expected: -1
+//     printf("Test 3: %d\n", ft_strncmp("testss", "test", 7));        // Expected: 1
+//     printf("Test 4: %d\n", ft_strncmp("", "test", 4));              // Expected: -1
+//     printf("Test 5: %d\n", ft_strncmp("test", "", 4));              // Expected: 1
+//     printf("Test 6: %d\n", ft_strncmp("test\200", "test\0", 6));    // Expected: 1
 
-     printf("Test 1: %d\n", strncmp("abc", "abc", 3));            // Expected: 0
-    printf("Test 2: %d\n", strncmp("test", "testss", 7));        // Expected: -1
-    printf("Test 3: %d\n", strncmp("testss", "test", 7));        // Expected: 1
-    printf("Test 4: %d\n", strncmp("", "test", 4));              // Expected: -1
-    printf("Test 5: %d\n", strncmp("test", "", 4));              // Expected: 1
-    printf("Test 6: %d\n", strncmp("test\200", "test\0", 6)); 
+//      printf("Test 1: %d\n", strncmp("abc", "abc", 3));            // Expected: 0
+//     printf("Test 2: %d\n", strncmp("test", "testss", 7));        // Expected: -1
+//     printf("Test 3: %d\n", strncmp("testss", "test", 7));        // Expected: 1
+//     printf("Test 4: %d\n", strncmp("", "test", 4));              // Expected: -1
+//     printf("Test 5: %d\n", strncmp("test", "", 4));              // Expected: 1
+//     printf("Test 6: %d\n", strncmp("test\200", "test\0", 6)); 
 
-    return (0);
-}
+//     return (0);
+// }
+
+// #include <fcntl.h>
+// int main(void)
+// {
+//     printf("Writting to a terminal: \n");
+//     ft_putendl_fd("Hello world!", 1);
+
+//     int fd_num = open("fd_test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+//     if(fd_num < 0)
+//         return(1);
+//     printf("Writting to a file: \n");
+//     ft_putendl_fd("Hello world!", fd_num);
+//     close(fd_num);
+
+//     ft_putstr_fd("Hello Iam Afnan\n", 1);
+//     ft_putnbr_fd(4567, 1);
+
+//     return (0);
+// }
